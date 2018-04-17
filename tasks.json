@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "tasks": [
+    {
+      "taskName": "complie package",
+      // The command is a shell script
+      "isShellCommand": true,
+      // Run sqlplus
+      //"command": "sqlplus",
+      // Alternative (see below)
+      "command": "compile_package.bat",
+      "isBuildCommand": true,
+      "args": [
+        "esc_usr1/p@duosv01",
+        "@\"${file}\""
+      ],
+      "showOutput": "silent",
+      "problemMatcher": {
+        "owner": "plsql",
+        "fileLocation": [
+          "relative",
+          "${fileDirname}"  
+        ],
+        "pattern": [
+          {
+            "regexp": "(.*) (\\d+)\/(\\d+) (.*?) (.*)",
+            "severity": 1,
+            "line": 2,
+            "column": 3,
+            "file": 4,
+            "message": 5,
+            "loop": true
+          }
+        ]
+      }
+    },
+    {
+      "taskName": "run sql",
+       // The command is a shell script
+      "isShellCommand": true,
+      "isTestCommand": true,
+      "showOutput": "always",
+      // Run sqlplus
+      //"command": "sqlplus",
+      // Alternative (see below)
+      "command": "run_sql.bat",
+      "args": [
+        "esc_usr1/p@duosv01",
+        "@\"${file}\""
+      ],
+    }
+  ]
+}
