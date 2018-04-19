@@ -11,7 +11,7 @@
       "command": "compile_package.bat",
       "isBuildCommand": true,
       "args": [
-        "esc_usr1/p@duosv01",
+        "usename/password@server",
         "@\"${file}\""
       ],
       "showOutput": "silent",
@@ -45,7 +45,7 @@
       // Alternative (see below)
       "command": "run_sql.bat",
       "args": [
-        "esc_usr1/p@duosv01",
+        "usename/password@server",
         "@\"${file}\""
       ],
     }
